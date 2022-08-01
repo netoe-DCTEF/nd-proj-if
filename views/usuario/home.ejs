@@ -9,22 +9,39 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/faviconUsuario/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/faviconUsuario/favicon-16x16.png">
     <link rel="manifest" href="/favicon/faviconUsuario/site.webmanifest">
-    <link rel="stylesheet" href="/css/usuario/home/protop.css">
     <link rel="stylesheet" href="/css/site-all-defaults/defaults.css">
     <title>Postgres: Uma nova era digital.</title>
 </head>
-<body>
+<body class = "bg-grey">
     <div class = "container">
-        <div class = "row bg-dark p-4">
-            <div class = "logo-all cent-div-inside col-2">
+        <div class = "row bg-dark p-4 border-left-grey">
+            <div class = "logo-all d-flex align-items-center justify-content-center col-2">
                 <div class = "logo col">
                     <img src = "/img/logoSites/logo.png" alt = "Logo do site" class = "img-resp-logo">
                 </div>
-                <div class = "emp-nome cent-div-inside ms-3">
-                    <div class = "fw-bolder text-white h5">Postgres</div>
+            </div>
+        </div>
+        <div class = "row bg-light p-5">
+            <div class = "card border-0 bg-light">
+                <div class = "card-header bg-light border-0">
+                    <div class = "h2">Selecione uma das rotas:</div>
+                </div>
+                <div class = "card-body bg-light">
+                    <div class = "btn-sections">
+                        <div class ="btn-field">
+                            <a class = "btn btn-primary text-white btn-lg" href = "/usuario/login">Login</a>
+                        </div>
+                        <div class ="btn-field">
+                            <a class = "btn btn-primary text-white btn-lg mt-3" href = "/usuario/registrar">Registrar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class = "card-footer bg-light">
+                    <div class = "card-subtitle"><small><i>Powered by bootstrap.</i></small></div>
                 </div>
             </div>
         </div>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>

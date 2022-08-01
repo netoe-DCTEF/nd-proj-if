@@ -13,6 +13,7 @@ function def_appUse(){
         express.static(path.join(__dirname,'/public'))
     );
     app.use('/usuario',usuario_routes);
+    app.use(express.urlencoded({extended:true}));
 }
 
 function def_appSet(){
