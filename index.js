@@ -3,6 +3,18 @@ const app = express();
 const port = 3000;
 const path = require('path');
 const usuario_routes = require('./routes/UsuarioRoutes.js');
+const passport = require("./config/passport");
+var session = require("express-session");
+var autenticacao = require("./config/autenticacao");
+
+app.use(
+  session({
+    secret: "5info",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+app.use(passport.authenticate("session"));
 
 function log_listen(){
     console.log('Rodando na porta:',port);
@@ -21,10 +33,19 @@ function def_appSet(){
 }
 
 function redirectHome(){
+
     app.get('/',(req,res)=>{
-        res.redirect('/usuario/home');
+        res.render('./usuario/login.ejs');
     })
 }
+
+app.post(
+    "/",
+    passport.authenticate("local", {
+      successRedirect: "/usuario/list",
+      failureRedirect: "/",
+    })
+  );
 
 def_appUse();
 def_appSet();
