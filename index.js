@@ -15,6 +15,7 @@ function log_listen(){
 }
 
 function def_appUse(){
+  app.use(bodyParser.urlencoded({extended:true}));
     app.use(
       session({
         secret: "5info",
@@ -29,7 +30,6 @@ function def_appUse(){
     app.use('/usuario',usuario_routes);
     app.use('/genero',autenticacao,genero_routes);
     app.use('/logged',autenticacao,default_routes);
-    app.use(bodyParser.urlencoded({extended:true}));
 }
 
 function def_appSet(){

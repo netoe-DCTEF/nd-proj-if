@@ -24,16 +24,28 @@
         <div class = "row bg-light p-5">
             <div class = "card border-0 bg-light">
                 <div class = "card-header bg-light border-0">
-                    <div class = "h2">Adicione novos gêneros audiovisuais!</div>
+                    <div class = "h2">Gênero(s) audiovisual(s) registrado(s):</div>
                 </div>
                 <div class = "card-body bg-light">
-                    <form class = "form" method="post">
-                        <div class = "form-label h5 w-100 mt-3 mb-3">Digite um gênero textual:</div>
-                        <input type="text" name="nome" id="input-nome" required placeholder="Ex:Ação,romance" class = "form-control w-100">      
-                        <div class = "form-label h5 w-100  mt-3 mb-3">Digite palavras-chave (podem facilitar a busca de dados!):</div>
-                        <input type="text" name="keywords" id="input-nickname" required placeholder="Ação:Silvester Stalone, Mercenários" class = "form-control w-100">      
-                        <input type="submit" value="Registrar gênero" class = "btn btn-primary btn-lg mt-3 text-center" id = "input-submit" onfocus="verificarSenha()">                   
-                    </form>
+                    <div class = "row">
+                        <div class = "col ">
+                            <div class = "h2 text-center">Nome:</div>
+                        </div>
+                        <div class = "col ">
+                            <div class = "h2 text-center">Keywords:</div>
+                        </div>
+                    </div>
+                    <%Model.forEach(model){%>
+                        <div class = "row">
+                            <div class = "col ">
+                                <div class = "h2 text-center"><%=model.genero%></div>
+                            </div>
+                            <div class = "col ">
+                                <div class = "h2 text-center"><%=model.keywords%></div>
+                            </div>
+                        </div>
+                    
+                    <%}%>
                 </div>
                 <div class = "card-footer bg-light">
                     <div class = "card-subtitle"><small><i>Powered by bootstrap.</i></small></div>

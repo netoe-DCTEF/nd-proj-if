@@ -28,11 +28,11 @@
                 </div>
                 <div class = "card-body bg-light">
                     <form class = "form" method="post">
-                        <div class = "form-label h5 w-100 mt-3 mb-3">Digite um gênero textual:</div>
-                        <input type="text" name="nome" id="input-nome" required placeholder="Ex:Ação,romance" class = "form-control w-100">      
-                        <div class = "form-label h5 w-100  mt-3 mb-3">Digite palavras-chave (podem facilitar a busca de dados!):</div>
-                        <input type="text" name="keywords" id="input-nickname" required placeholder="Ação:Silvester Stalone, Mercenários" class = "form-control w-100">      
-                        <input type="submit" value="Registrar gênero" class = "btn btn-primary btn-lg mt-3 text-center" id = "input-submit" onfocus="verificarSenha()">                   
+                        <div class = "form-label h5 w-100 mt-3 mb-3">Redigite um gênero textual:</div>
+                        <input type="text" name="nome" id="input-nome" required placeholder="Ex:Ação,romance" class = "form-control w-100" value = "<%=genero.genero%>">      
+                        <div class = "form-label h5 w-100  mt-3 mb-3">Redigite palavras-chave (podem facilitar a busca de dados!):</div>
+                        <input type="text" name="keywords" id="input-nickname" required placeholder="Ação:Silvester Stalone, Mercenários" class = "form-control w-100" value = "<%=genero.keywords%>">      
+                        <input type="submit" value="Editar gênero" class = "btn btn-primary btn-lg mt-3 text-center" id = "input-submit" onfocus="verificarSenha()">                   
                     </form>
                 </div>
                 <div class = "card-footer bg-light">
