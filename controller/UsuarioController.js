@@ -1,31 +1,30 @@
-const usuario_model = require('../models/UsuarioModel.js');
+const Model= require('../models/UsuarioModel.js');
 
-class Methods_get{
-    redirectPaginaInicial(req,res){
-        res.redirect('/usuario/home');
-    }    
+class Get{
     abreRegistrar(req,res){    
         res.render('usuario/registrar.ejs');
     }
     
 }
-class Methods_post{
+class Post{
     addUsuario(req,res){
-        let usuario = new usuario_model();
+        let usuario = new Model();
         usuario.nome = req.body.nome;
         usuario.nickname = req.body.nickname;
         usuario.email = req.body.email;
         usuario.senha = req.body.senha;
+
         usuario.save(function (err, result) {
             if (err) {
               res.send("Aconteceu o seguinte erro: " + err);
             } else {
-              res.redirect("/usuario/list");
+              res.redirect('/usuario/add');
             }
           });
         return;
     }
 }
-var methods_get = new Methods_get();
-var methods_post = new Methods_post();
-module.exports = {methods_get,methods_post};
+var get = new Get();
+var post = new Post();
+
+module.exports = {get,post};

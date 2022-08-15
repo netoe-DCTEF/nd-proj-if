@@ -2,11 +2,7 @@ const Model = require('../models/GeneroModel');
 
 class Get{
     abreaadd(req,res){
-        res.render('genero/add.ejs',{ Login: req.user });
-        return;
-    }
-    abrehome(req,res){
-        res.render('genero/index.ejs',{ Login: req.user });
+        res.render('genero/add.ejs');
         return;
     }
 };

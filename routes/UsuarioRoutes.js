@@ -1,15 +1,19 @@
 const express = require('express');
-const usuario_router = express.Router();
-const usuario_controller = require('../controller/UsuarioController.js');
+const router = express.Router();
+const controller = require('../controller/UsuarioController.js');
 
 
-function registrarUsuario(){
-    usuario_router.get('/registrar',usuario_controller.methods_get.abreRegistrar);  
-    usuario_router.post('/registrar',usuario_controller.methods_post.addUsuario);
+function getF(){
+    router.get('/registrar',controller.get.abreRegistrar);
 }
 
-registrarUsuario();
+function postF(){ 
+    router.post('/registrar',controller.post.addUsuario); 
+}
+
+getF();
+postF();
 
 
 
-module.exports = usuario_router;
+module.exports = router;

@@ -4,6 +4,7 @@ const port = 3000;
 const path = require('path');
 const usuario_routes = require('./routes/UsuarioRoutes');
 const genero_routes = require('./routes/GeneroRoutes');
+const default_routes = require('./routes/DefaultRoute');
 const passport = require("./config/passport");
 const bodyParser = require('body-parser');
 var session = require("express-session");
@@ -27,6 +28,7 @@ function def_appUse(){
     );
     app.use('/usuario',usuario_routes);
     app.use('/genero',autenticacao,genero_routes);
+    app.use('/logged',autenticacao,default_routes);
     app.use(bodyParser.urlencoded({extended:true}));
 }
 
@@ -46,7 +48,7 @@ def_appSet();
 app.post(
   "/",
   passport.authenticate("local", {
-    successRedirect: "/usuario/list",
+    successRedirect: "/logged/home",
     failureRedirect: "/",
   })
 );

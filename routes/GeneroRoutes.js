@@ -4,7 +4,6 @@ const controller = require('../controller/GeneroController');
 
 function getF(){
     router.get('/add',controller.get.abreaadd);
-    router.get('/home',controller.get.abrehome);
 }
 
 function postF(){
