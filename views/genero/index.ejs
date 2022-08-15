@@ -23,19 +23,17 @@
         </div>
         <div class = "row bg-light p-5">
             <div class = "card border-0 bg-light">
-                <div class = "card-header bg-light border-0">
-                    <div class = "h2">Selecione uma das rotas:</div>
-                </div>
-                <div class = "card-body bg-light">
-                    <div class = "btn-sections">
-                        <div class ="btn-field">
-                            <a class = "btn btn-primary text-white btn-lg" href = "/usuario/login">Login</a>
-                        </div>
-                        <div class ="btn-field">
-                            <a class = "btn btn-primary text-white btn-lg mt-3" href = "/usuario/registrar">Registrar</a>
-                        </div>
+                <form class = "form" method="post">
+                    <div class = "card-header bg-light border-0">
+                        <div class = "h2">Informe os seus dados para registro:</div>
                     </div>
-                </div>
+                    <div class = "card-body bg-light">
+                       <div class = "btn btn-primary">
+                            <a href = "/genero/add" class = "text-decoration-none">Adicionar</a>
+                            <a href = "/genero/list" class = "text-decoration-none">Listar</a>
+                       </div>        
+                    </div>
+                </form>
                 <div class = "card-footer bg-light">
                     <div class = "card-subtitle"><small><i>Powered by bootstrap.</i></small></div>
                 </div>
