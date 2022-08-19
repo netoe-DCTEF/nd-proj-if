@@ -14,10 +14,13 @@
 </head>
 <body class = "bg-grey">
     <div class = "container">
-        <div class = "row bg-dark p-4 border-left-grey">
-            <div class = "logo-all d-flex align-items-center justify-content-center col-2">
-                <div class = "logo col">
+        <div class = "row bg-dark p-4 border-left-grey d-flex justify-content-between">
+            <div class = "logo-all d-flex align-items-center justify-content-center row">
+                <div class = "logo col-10 d-flex align-items-center justify-content-start">
                     <img src = "/img/logoSites/logo.png" alt = "Logo do site" class = "img-resp-logo">
+                </div>
+                <div class = "nav col">
+                    <a class = "btn btn-primary" href = "/genero/add">Adicionar</a>
                 </div>
             </div>
         </div>
@@ -25,6 +28,8 @@
             <div class = "card border-0 bg-light">
                 <div class = "card-header bg-light border-0">
                     <div class = "h2">Gênero(s) audiovisual(s) registrado(s):</div>
+                    <div class = "bg-info row">
+                    </div>
                 </div>
                 <div class = "card-body bg-light">
                     <div class = "row">
@@ -34,25 +39,37 @@
                         <div class = "col ">
                             <div class = "h2 text-center">Keywords:</div>
                         </div>
+                        <div class = "col ">
+                            <div class = "h2 text-center">Deletar:</div>
+                        </div>
+                        <div class = "col ">
+                            <div class = "h2 text-center">Editar:</div>
+                        </div>
+                        
                     </div>
-                    <%Model.forEach(model){%>
+                    <%Model.forEach((model)=>{%>
                         <div class = "row">
                             <div class = "col ">
-                                <div class = "h2 text-center"><%=model.genero%></div>
+                                <div class = " text-center"><%=model.genero%></div>
                             </div>
                             <div class = "col ">
-                                <div class = "h2 text-center"><%=model.keywords%></div>
+                                <div class = "text-center"><%=model.keywords%></div>
+                            </div>
+                            <div class = "col ">
+                                <a class = "text-decoration-none btn btn-danger" href = "/genero/delete/<%=model._id%>">Deletar</a>
+                            </div>
+                            <div class = "col ">
+                                <a class = "text-decoration-none btn btn-danger" href = "/genero/delete/<%=model._id%>">Deletar</a>
                             </div>
                         </div>
                     
-                    <%}%>
+                    <%});%>
                 </div>
                 <div class = "card-footer bg-light">
                     <div class = "card-subtitle"><small><i>Powered by bootstrap.</i></small></div>
                 </div>
             </div>
         </div>
-
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>

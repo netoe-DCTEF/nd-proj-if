@@ -6,17 +6,19 @@ class Get{
         return;
     }
     abreedit(req,res){
-        Model.findById(req.params.id).then((genero)=>{
-            res.render('/genero/edit.ejs',{Model:genero,Login:req.user});
+        Model.findById(req.params.id).then((model)=>{
+            res.render('genero/edit.ejs',{Model:model,Login:req.user});
         });
     }
     abrelist(req,res){
-        res.render('/genero/list',{Model:model})
+        Model.find({}).then((model)=>{
+            res.render('genero/list.ejs',{Model:model});
+        });
     } 
     deleta(req,res){
         Model.findByIdAndDelete(req.params.id).then(()=>{
-            res.render('/usuario/list.ejs');
-        })
+            res.render('/genero/list.ejs');
+        })        
     }
 };
 
@@ -25,6 +27,8 @@ class Post{
         var genero_novo = new Model();
         genero_novo.genero = req.body.nome;
         genero_novo.keywords = req.body.keywords;
+        genero_novo.save();
+        res.redirect('/genero/list');
     }
     edit(req,res){
         Model.findByIdAndUpdate(req.params.id,{

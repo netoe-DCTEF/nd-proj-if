@@ -15,7 +15,7 @@ function log_listen(){
 }
 
 function def_appUse(){
-  app.use(bodyParser.urlencoded({extended:true}));
+  app.use(express.urlencoded({extended:true}));
     app.use(
       session({
         secret: "5info",

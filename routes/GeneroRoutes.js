@@ -5,7 +5,8 @@ const controller = require('../controller/GeneroController');
 function getF(){
     router.get('/add',controller.get.abreaadd);
     router.get('/list',controller.get.abrelist);
-    router.get('/edit/id:',controller.get.abreedit);
+    router.get('/edit/:id',controller.get.abreedit);
+    router.get('/delete/:id',controller.get.deleta);
 }
 
 function postF(){
