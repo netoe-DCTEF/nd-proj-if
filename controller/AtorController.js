@@ -9,7 +9,7 @@ class Get{
 
     abreedit(req,res){
         Ator.findById(req.params.id).then((ator)=>{
-            res.render('ator/list.ejs',{Ator:ator})
+            res.render('ator/edit.ejs',{Ator:ator})
         });
     }
 
@@ -31,7 +31,7 @@ class Post{
         model.sobrenome = req.body.sobrenome;
         model.data_nascimento = req.body.nascimento;
         model.save();
-        res.redirect('/ator/add');
+        res.redirect('/ator/list');
     }
 
     edit(res,req){

@@ -41,7 +41,13 @@
                         </div>
                         <div class = "col ">
                             <div class = "h2 text-center">Data de nascimento:</div>
+                        </div>
+                        <div class = "col ">
+                            <div class = "h2 text-center">Deletar:</div>
                         </div>                        
+                        <div class = "col ">
+                            <div class = "h2 text-center">Editar:</div>
+                        </div>
                     </div>
                     <%Ator.forEach((ator)=>{%>
                         <div class = "row d-flex">
@@ -55,10 +61,10 @@
                                 <div class = "text-center"><%=ator.data_nascimento.toLocaleString()%></div>
                             </div>
                             <div class = "col text-center">
-                                <a class = "text-decoration-none btn btn-danger" href = "/ator/delete/<%=model._id%>">Deletar</a>
+                                <a class = "text-decoration-none btn btn-danger mt-2 mb-2" href = "/ator/delete/<%=ator._id%>">Deletar</a>
                             </div>
                             <div class = "col text-center ">
-                                <a class = "text-decoration-none btn btn-danger" href = "/ator/edit/<%=model._id%>">Editar</a>
+                                <a class = "text-decoration-none btn btn-danger mt-2 mb-2" href = "/ator/edit/<%=ator._id%>">Editar</a>
                             </div>
                         </div>
                     

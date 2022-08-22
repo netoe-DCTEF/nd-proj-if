@@ -28,9 +28,9 @@ function def_appUse(){
       express.static(path.join(__dirname,'/public'))
     );
     app.use('/usuario',usuario_routes);
-    app.use('/ator',ator_routes);
     app.use('/genero',genero_routes);
     app.use('/logged',autenticacao,default_routes);
+    app.use('/ator',ator_routes);
 }
 
 function def_appSet(){

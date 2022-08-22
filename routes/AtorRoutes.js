@@ -10,11 +10,11 @@ function router_get(){
     router.get('/edit/:id',controller.get.abreedit);
 }
 function router_post(){
-    router.get('/add',controller.post.add);
-    router.get('/edit/:id',controller.post.edit);
+    router.post('/add',controller.post.add);
+    router.post('/edit/:id',controller.post.edit);
 }
 
 router_get();
-router_post
+router_post();
 
 module.exports = router;
