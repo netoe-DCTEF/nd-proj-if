@@ -11,7 +11,7 @@ function getF(){
 
 function postF(){
     router.post('/add',controller.post.add);
-    router.post('/edit/id:',controller.post.edit);
+    router.post('/edit/:id',controller.post.edit);
 }
 
 

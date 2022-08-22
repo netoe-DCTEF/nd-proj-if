@@ -48,18 +48,18 @@
                         
                     </div>
                     <%Model.forEach((model)=>{%>
-                        <div class = "row">
+                        <div class = "row d-flex">
                             <div class = "col ">
                                 <div class = " text-center"><%=model.genero%></div>
                             </div>
                             <div class = "col ">
                                 <div class = "text-center"><%=model.keywords%></div>
                             </div>
-                            <div class = "col ">
+                            <div class = "col text-center">
                                 <a class = "text-decoration-none btn btn-danger" href = "/genero/delete/<%=model._id%>">Deletar</a>
                             </div>
-                            <div class = "col ">
-                                <a class = "text-decoration-none btn btn-danger" href = "/genero/delete/<%=model._id%>">Deletar</a>
+                            <div class = "col text-center ">
+                                <a class = "text-decoration-none btn btn-danger" href = "/genero/edit/<%=model._id%>">Editar</a>
                             </div>
                         </div>
                     

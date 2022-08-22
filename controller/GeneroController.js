@@ -7,7 +7,7 @@ class Get{
     }
     abreedit(req,res){
         Model.findById(req.params.id).then((model)=>{
-            res.render('genero/edit.ejs',{Model:model,Login:req.user});
+            res.render('genero/edit.ejs',{Model:model});
         });
     }
     abrelist(req,res){
@@ -17,7 +17,7 @@ class Get{
     } 
     deleta(req,res){
         Model.findByIdAndDelete(req.params.id).then(()=>{
-            res.render('/genero/list.ejs');
+            res.render('genero/list.ejs');
         })        
     }
 };

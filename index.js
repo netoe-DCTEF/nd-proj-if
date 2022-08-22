@@ -5,8 +5,8 @@ const path = require('path');
 const usuario_routes = require('./routes/UsuarioRoutes');
 const genero_routes = require('./routes/GeneroRoutes');
 const default_routes = require('./routes/DefaultRoute');
+const ator_routes = require('./routes/AtorRoutes');
 const passport = require("./config/passport");
-const bodyParser = require('body-parser');
 var session = require("express-session");
 var autenticacao = require("./config/autenticacao");
 
@@ -28,7 +28,8 @@ function def_appUse(){
       express.static(path.join(__dirname,'/public'))
     );
     app.use('/usuario',usuario_routes);
-    app.use('/genero',autenticacao,genero_routes);
+    app.use('/ator',ator_routes);
+    app.use('/genero',genero_routes);
     app.use('/logged',autenticacao,default_routes);
 }
 
