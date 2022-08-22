@@ -4,9 +4,17 @@ const router = express.Router();
 
 
 function router_get(){
-    router.get('/list',);
+    router.get('/list',controller.get.abrelist);
+    router.get('/add',controller.get.abreadd);
+    router.get('/delete/:id',controller.get.deleta);
+    router.get('/edit/:id',controller.get.abreedit);
 }
 function router_post(){
-
+    router.get('/add',controller.post.add);
+    router.get('/edit/:id',controller.post.edit);
 }
+
+router_get();
+router_post
+
 module.exports = router;

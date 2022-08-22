@@ -1,13 +1,16 @@
-const AtorModel = require('../models/AtorModel');
-const Ator = require('../models/AtorModel');
+const Ator = require('../models/AtorModel')
 
 class Get{
     abrelist(req,res){
-        res.render('ator/list.ejs');
+        Ator.find(null).then((ator)=>{
+            res.render("ator/list.ejs",{Ator:ator});
+        })
     }
 
     abreedit(req,res){
-        res.render('ator/edit.ejs');
+        Ator.findById(req.params.id).then((ator)=>{
+            res.render('ator/list.ejs',{Ator:ator})
+        });
     }
 
     abreadd(req,res){
@@ -17,19 +20,17 @@ class Get{
     deleta(req,res){
         Ator.findByIdAndDelete(req.params.id).then((req,res)=>{
             res.render('ator/list.ejs');
-        });
+         });
     }
 }
 
 class Post{
-    add(res,req){
+    add(req,res){
         let model = new Ator();
         model.nome = req.body.nome;
         model.sobrenome = req.body.sobrenome;
         model.data_nascimento = req.body.nascimento;
-
         model.save();
-
         res.redirect('/ator/add');
     }
 
@@ -50,7 +51,7 @@ class Post{
     }
 }
 
-let get = new Get();
-let post = new Post();
+var get = new Get();
+var post = new Post();
 
 module.exports = {get,post};

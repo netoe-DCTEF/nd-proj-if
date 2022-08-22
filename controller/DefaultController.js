@@ -1,3 +1,5 @@
+const mongoose = require("mongoose");
+
 class Get{
     abrehome(req,res){
         res.render('logged/index.ejs');
@@ -5,5 +7,4 @@ class Get{
 }
 
 var get = new Get();
-
 module.exports = {get};
