@@ -18,9 +18,7 @@ class Get{
     }
 
     deleta(req,res){
-        Ator.findByIdAndDelete(req.params.id).then((req,res)=>{
-            res.render('ator/list.ejs');
-         });
+        Ator.findByIdAndDelete(req.params.id).then(res.redirect('/ator/list'));
     }
 }
 

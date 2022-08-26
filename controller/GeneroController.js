@@ -17,7 +17,7 @@ class Get{
     } 
     deleta(req,res){
         Model.findByIdAndDelete(req.params.id).then(()=>{
-            res.render('genero/list.ejs');
+            res.redirect('/genero/list');
         })        
     }
 };
@@ -40,7 +40,7 @@ class Post{
                 res.send('Algo deu errado.->' + err);
             }
             else{   
-                res.redirect('/logged/home');
+                res.redirect('/genero/list');
             }
         }
         )

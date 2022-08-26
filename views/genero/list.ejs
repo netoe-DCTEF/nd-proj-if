@@ -17,7 +17,9 @@
         <div class = "row bg-dark p-4 border-left-grey d-flex justify-content-between">
             <div class = "logo-all d-flex align-items-center justify-content-center row">
                 <div class = "logo col-10 d-flex align-items-center justify-content-start">
-                    <img src = "/img/logoSites/logo.png" alt = "Logo do site" class = "img-resp-logo">
+                    <a href = "/logged/home">
+                        <img src = "/img/logoSites/logo.png" alt = "Logo do site" class = "img-resp-logo">
+                    </a>
                 </div>
                 <div class = "nav col">
                     <a class = "btn btn-primary" href = "/genero/add">Adicionar</a>
@@ -47,7 +49,7 @@
                         </div>
                         
                     </div>
-                    <%Model.forEach((model)=>{%>
+                    <%Model.forEach((model =>{%>
                         <div class = "row d-flex">
                             <div class = "col ">
                                 <div class = " text-center"><%=model.genero%></div>
@@ -63,7 +65,7 @@
                             </div>
                         </div>
                     
-                    <%});%>
+                    <%}));%>
                 </div>
                 <div class = "card-footer bg-light">
                     <div class = "card-subtitle"><small><i>Powered by bootstrap.</i></small></div>

@@ -17,7 +17,9 @@
         <div class = "row bg-dark p-4 border-left-grey d-flex justify-content-between">
             <div class = "logo-all d-flex align-items-center justify-content-center row">
                 <div class = "logo col-10 d-flex align-items-center justify-content-start">
-                    <img src = "/img/logoSites/logo.png" alt = "Logo do site" class = "img-resp-logo">
+                    <a href = "/logged/home">
+                        <img src = "/img/logoSites/logo.png" alt = "Logo do site" class = "img-resp-logo">
+                    </a>
                 </div>
                 <div class = "nav col">
                     <a class = "btn btn-primary" href = "/ator/add">Adicionar</a>
@@ -37,9 +39,6 @@
                             <div class = "h2 text-center">Nome:</div>
                         </div>
                         <div class = "col ">
-                            <div class = "h2 text-center">Sobrenome:</div>
-                        </div>
-                        <div class = "col ">
                             <div class = "h2 text-center">Data de nascimento:</div>
                         </div>
                         <div class = "col ">
@@ -52,10 +51,7 @@
                     <%Ator.forEach((ator)=>{%>
                         <div class = "row d-flex">
                             <div class = "col ">
-                                <div class = " text-center"><%=ator.nome%></div>
-                            </div>
-                            <div class = "col ">
-                                <div class = "text-center"><%=ator.sobrenome%></div>
+                                <div class = " text-center"><%=ator.nome%> <%=ator.sobrenome%></div>
                             </div>
                             <div class = "col ">
                                 <div class = "text-center"><%=ator.data_nascimento.toLocaleString()%></div>
