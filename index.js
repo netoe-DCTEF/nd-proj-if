@@ -6,6 +6,7 @@ const usuario_routes = require('./routes/UsuarioRoutes');
 const genero_routes = require('./routes/GeneroRoutes');
 const default_routes = require('./routes/DefaultRoutes');
 const ator_routes = require('./routes/AtorRoutes');
+const filme_routes = require('./routes/FilmeRoutes');
 const passport = require("./config/passport");
 var session = require("express-session");
 var autenticacao = require("./config/autenticacao");
@@ -30,6 +31,7 @@ function def_appUse(){
     app.use('/usuario',usuario_routes);
     app.use('/genero',genero_routes);
     app.use('/logged',autenticacao,default_routes);
+    app.use('/filme',filme_routes);
     app.use('/ator',ator_routes);
 }
 

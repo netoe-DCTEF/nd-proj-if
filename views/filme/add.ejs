@@ -31,23 +31,25 @@
                 <div class = "card-body bg-light">
                     <form class = "form" method="post">
                         <div class = "form-label h5 w-100 mt-3 mb-3">Nome:</div>
-                        <input type="text" name="nome" id="input-nome" required placeholder="Digite o nome do filme:" class = "form-control-lg w-100">
+                        <input type="text" name="nome" id="input-nome" required placeholder="Digite o nome do filme:" class = "form-control-lg w-100 border">
                         <div class = "form-label h5 w-100 mt-3 mb-3">Ano:</div>
-                        <input type="date" name="ano" id="input-ano" required  class = "form-control-lg w-100">      
-                        <div class = "form-label h5 w-100  mt-3 mb-3">Selecione os gêneros disponíveis</div>
-                        <select name = "genero">
-                            <option hidden>Gênero</option>
-                            <%Genero.foreach((genero)=>{%>
-                                <option value = "<%=genero.genero%>"><%=genero.genero%></option>
-                            <%})%> 
-                        </select>
+                        <input type="date" name="ano" id="input-ano" required  class = "form-control-lg w-100 border">      
+                        <div class = "form-label h5 w-100  mt-3 mb-3">Selecione um dos gêneros disponíveis</div>
+                            <select name = "genero" class = "form-select-lg">
+                                <option hidden>Gênero</option>
+                                <%Genero.forEach((genero)=>{%>
+                                    <option value = "<%=genero.genero%>"><%=genero.genero%></option>
+                                <%})%> 
+                            </select>
                         <div class = "form-label h5 w-100  mt-3 mb-3">Selecione os atores disponíveis:</div>
-                        <%Atores.foreach((atores)=>{%>
-                            <input type="checkbox" name="<%=atores.nome%>" id="" value = "<%=atores.nome%>">
-                        <%})%>
+                            <select name = "atores" class = "form-select-lg" multiple>
+                                <%Atores.forEach((atores)=>{%>
+                                    <option value = "<%=atores.nome%>"><%=atores.nome%></option>
+                                <%})%> 
+                            </select>
                         <input type="submit" value="Registrar novo ator" class = "btn btn-primary btn-lg mt-3 text-center" id = "input-submit" onfocus="verificarSenha()">                   
                     </form>
-                </div>000
+                </div>
                 <div class = "card-footer bg-light">
                     <div class = "card-subtitle"><small><i>Powered by bootstrap.</i></small></div>
                 </div>
