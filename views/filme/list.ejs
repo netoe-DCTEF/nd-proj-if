@@ -47,28 +47,37 @@
                         <div class = "col ">
                             <div class = "h2 text-center">Atores:</div>
                         </div>
+                        <div class = "col ">
+                            <div class = "h2 text-center">Deletar:</div>
+                        </div>
+                        <div class = "col ">
+                            <div class = "h2 text-center">Editar</div>
+                        </div>
                         
                     </div>
                     <%Filme.forEach((filmes) =>{%>
                         <div class = "row d-flex">
                             <div class = "col ">
-                                <div class = " text-center"><%=filmes.nome%></div>
+                                <div class = " text-center"><%=filmes.nome%> </div>
                             </div>
                             <div class = "col ">
-                                <div class = "text-center"><%=filmes.ano%></div>
+                                <div class = "text-center"><%=filmes.ano.toLocaleString()%></div>
                             </div>
                             <div class = "col ">
-                                <div class = "text-center"><%=filmes.genero%></div>
+                                <div class = "text-center"><%=filmes.genero.genero%></div>
                             </div>
                             <div class = "col ">
-                                <div class = "text-center"><%=filmes.atores.nome%> <%=filmes.atores.sobrenome%></div>
+                                <%filmes.atores.forEach((atores)=>{%>
+                                    <div class = "text-center"><%=atores.nome%> <%=atores.sobrenome%></div>
+                                <%})%>
                             </div>
                             <div class = "col text-center">
-                                <a class = "text-decoration-none btn btn-danger" href = "/genero/delete/<%=filmes._id%>">Deletar</a>
+                                <a class = "text-decoration-none btn btn-danger" href = "/filme/deleta/<%=filmes._id%>">Deletar</a>
                             </div>
                             <div class = "col text-center ">
-                                <a class = "text-decoration-none btn btn-danger" href = "/genero/edit/<%=filmes._id%>">Editar</a>
+                                <a class = "text-decoration-none btn btn-danger" href = "/filme/edit/<%=filmes._id%>">Editar</a>
                             </div>
+                            
                         </div>
                     
                     <%});%>
