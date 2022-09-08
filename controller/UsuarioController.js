@@ -18,7 +18,7 @@ class Post{
             if (err) {
               res.send("Aconteceu o seguinte erro: " + err);
             } else {
-              res.redirect('/usuario/add');
+              res.redirect('/');
             }
           });
         return;
